@@ -10,7 +10,6 @@ def main():
         if choice == '1':
             password = input('Please enter your password to encode: ')
             encoded_password = encode(password)
-            print(encoded_password)
             print('Your password has been encoded and stored!')
 
         if choice == '2':
@@ -28,8 +27,21 @@ def encode(password):
 
     return encoded_password
 
+# Commented out function to be fixed - Daniel
+''' def decode(password):
+     return None '''
+
+# Added decode function - Daniel
 def decode(password):
-    return None
+    decoded_password = ''
+    for char in password:
+        if char > '2':
+            new_char = str(int(char) - 3)
+            decoded_password += new_char
+        else:
+            new_char = str(int(char) + 7)
+            decoded_password += new_char
+    return decoded_password
 
 if __name__ == '__main__':
     main()
