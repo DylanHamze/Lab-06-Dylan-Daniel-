@@ -1,6 +1,11 @@
-def decoder(encoded_password):
+def decode(password):
     decoded_password = ''
-    for digit in encoded_password:
-        old_number = str((int(digit) - 3) % 10)
-        decoded_password += old_number
+    for char in password:
+        if char > '2':
+            new_char = str(int(char) - 3)
+            decoded_password += new_char
+        else:
+            new_char = str(int(char) + 7)
+            decoded_password += new_char
     return decoded_password
+    return None
